@@ -1,25 +1,21 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import ToggleTheme from './ToggleTheme';
 ---
 
-<header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
+<header class="font-head fixed w-full px-5 py-3 backdrop-blur-3xl">
+  <div class="mx-auto max-w-3xl flex items-center justify-between">
+    <h2 class="font-bold text-3xl">jecktor.com</h2>
+    <div class="flex gap-8">
+      <nav class="items-center gap-8 hidden md:flex">
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/blog">Blog</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="https://github.com/withastro/astro" target="_blank">
+          GitHub
+        </HeaderLink>
+      </nav>
+      <ToggleTheme client:load />
+    </div>
+  </div>
 </header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
-</style>

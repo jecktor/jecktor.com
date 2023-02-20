@@ -1,11 +1,10 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import Body from '../components/Body.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-import '@fontsource/rubik';
-import '@fontsource/outfit';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!DOCTYPE html>
@@ -13,8 +12,8 @@ import '@fontsource/outfit';
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
-    <Header title={SITE_TITLE} />
+  <Body>
+    <Header />
     <main>
       <h1 class="font-head text-xl">🧑‍🚀 Hello, Astronaut!</h1>
       <p>
@@ -63,5 +62,5 @@ import '@fontsource/outfit';
       </p>
     </main>
     <Footer />
-  </body>
+  </Body>
 </html>
