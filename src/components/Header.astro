@@ -5,7 +5,7 @@ import ToggleTheme from './ToggleTheme';
 
 <header class="font-head fixed w-full px-5 py-3 backdrop-blur-3xl">
   <div class="mx-auto max-w-3xl flex items-center justify-between">
-    <h2 class="font-bold text-3xl">jecktor.com</h2>
+    <a href="/"><h2 class="font-bold text-3xl">jecktor.com</h2></a>
     <div class="flex gap-8">
       <nav class="items-center gap-8 hidden md:flex">
         <HeaderLink href="/">Home</HeaderLink>
@@ -15,7 +15,7 @@ import ToggleTheme from './ToggleTheme';
           GitHub
         </HeaderLink>
       </nav>
-      <ToggleTheme client:load />
+      <ToggleTheme client:visible />
     </div>
   </div>
 </header>

@@ -26,9 +26,15 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     const root = document.documentElement;
+    const themeEl = document.querySelector('meta[name="theme-color"]');
 
-    if (theme === 'light') root.classList.remove('dark');
-    else root.classList.add('dark');
+    if (theme === 'light') {
+      root.classList.remove('dark');
+      themeEl?.setAttribute('content', '#EAEAEB');
+    } else {
+      root.classList.add('dark');
+      themeEl?.setAttribute('content', '#282C34');
+    }
   }, [theme]);
 
   useEffect(() => {
@@ -36,7 +42,7 @@ const ThemeToggle = () => {
   }, []);
 
   return isMounted ? (
-    <div className="inline-flex items-center p-[1px] rounded-3xl bg-accent-300 dark:bg-neutral-700">
+    <div className="inline-flex items-center p-[1px] rounded-3xl bg-accent-300 dark:bg-neutral-500">
       {themes.map(t => {
         const checked = t === theme;
 
@@ -47,7 +53,7 @@ const ThemeToggle = () => {
             aria-label="Toggle theme"
             className={`${
               checked ? 'bg-neutral-100 text-neutral-700' : ''
-            } cursor-pointer rounded-3xl p-2`}
+            } cursor-pointer rounded-3xl p-2 outline-none`}
           >
             {t === 'light' ? <IoSunny /> : <IoMoon />}
           </button>

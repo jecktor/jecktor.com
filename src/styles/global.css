@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 body {
   font-family: 'Rubik', Verdana, --apple-system, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
 }
