@@ -1,6 +1,5 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import ToggleTheme from './ToggleTheme';
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
@@ -29,17 +28,14 @@ const currentPath = pathname.slice(1);
         )
       }
     </div>
-    <div class="flex gap-8">
-      <nav class="items-center gap-8 hidden md:flex">
-        <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/blog">Blog</HeaderLink>
-        <HeaderLink href="/about">About</HeaderLink>
-        <HeaderLink href="https://github.com/withastro/astro" target="_blank">
-          GitHub
-        </HeaderLink>
-      </nav>
-      <ToggleTheme client:visible />
-    </div>
+    <nav class="items-center gap-8 hidden md:flex">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href="https://github.com/withastro/astro" target="_blank">
+        GitHub
+      </HeaderLink>
+    </nav>
   </div>
 </header>
 <script>
