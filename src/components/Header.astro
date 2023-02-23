@@ -1,11 +1,23 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import ToggleTheme from './ToggleTheme';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
 <header class="font-head fixed w-full px-5 py-3 backdrop-blur-3xl">
   <div class="mx-auto max-w-3xl flex items-center justify-between">
-    <a href="/"><h2 class="font-bold text-3xl">jecktor.com</h2></a>
+    <div class="flex items-baseline gap-1">
+      <a href="/"><h2 class="font-bold text-3xl">jecktor.com</h2></a>
+      {
+        currentPath && (
+          <a href={pathname}>
+            <h2 class="text-neutral-200">&sol; {currentPath}</h2>
+          </a>
+        )
+      }
+    </div>
     <div class="flex gap-8">
       <nav class="items-center gap-8 hidden md:flex">
         <HeaderLink href="/">Home</HeaderLink>
