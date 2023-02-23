@@ -1,8 +1,14 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 
+export interface Props {
+  hideRoute?: boolean;
+}
+
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
+
+const { hideRoute = false } = Astro.props;
 ---
 
 <div class="absolute inset-0 w-full h-[300px] overflow-hidden">
@@ -13,15 +19,12 @@ const currentPath = pathname.slice(1);
     class="w-full h-full object-cover"
   />
 </div>
-<header
-  id="head"
-  class="sticky top-[-1px] mt-52 font-head w-full px-5 py-3 backdrop-blur-lg"
->
+<header id="head" class="sticky top-[-1px] mt-52 font-head w-full px-5 py-3">
   <div class="mx-auto max-w-3xl flex items-center justify-between">
     <div class="flex items-baseline gap-1">
       <a href="/"><h2 class="font-bold text-3xl">jecktor.com</h2></a>
       {
-        currentPath && (
+        !hideRoute && currentPath && (
           <a href={pathname}>
             <h2 class="text-neutral-200">&sol; {currentPath}</h2>
           </a>
