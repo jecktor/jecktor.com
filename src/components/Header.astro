@@ -5,8 +5,9 @@ export interface Props {
   hideRoute?: boolean;
 }
 
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+const currentPath = new URL(Astro.request.url).pathname
+  .split('/')
+  .filter(Boolean)[0];
 
 const { hideRoute = false } = Astro.props;
 ---
@@ -25,7 +26,7 @@ const { hideRoute = false } = Astro.props;
       <a href="/"><h2 class="font-bold text-3xl">jecktor.com</h2></a>
       {
         !hideRoute && currentPath && (
-          <a href={pathname}>
+          <a href={`/${currentPath}`}>
             <h2 class="text-neutral-200">&sol; {currentPath}</h2>
           </a>
         )
