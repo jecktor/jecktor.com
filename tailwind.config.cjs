@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         sans: ['Rubik', ...defaultTheme.fontFamily.sans],
         head: ['Outfit', ...defaultTheme.fontFamily.sans],
+        mono: ['JetBrainsMono', ...defaultTheme.fontFamily.mono],
       },
       colors: {
         neutral: {

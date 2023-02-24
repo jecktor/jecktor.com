@@ -8,5 +8,21 @@ body {
 p {
   text-align: justify;
   line-height: 1.5em;
-  margin-bottom: 1.5em;
+}
+
+main a {
+  text-underline-offset: 2px;
+  text-decoration: underline;
+  text-decoration-color: #d6a1e7;
+}
+
+main a:hover {
+  color: #d6a1e7;
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  background-color: #21252b !important;
 }
