@@ -22,7 +22,15 @@ main a:hover {
 
 pre {
   padding: 1rem;
-  border-radius: 0.75rem;
   margin-bottom: 1.5rem;
+}
+
+p > code {
+  padding: 0.5rem;
+}
+
+pre,
+p > code {
+  border-radius: 0.75rem;
   background-color: #21252b !important;
 }
