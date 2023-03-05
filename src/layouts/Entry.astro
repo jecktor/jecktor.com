@@ -9,7 +9,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'entries'>['data'];
 
-const { title, description, pubDate, updatedDate } = Astro.props;
+const { title, description, pubDate } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -21,16 +21,9 @@ const { title, description, pubDate, updatedDate } = Astro.props;
     <Header />
     <main class="pt-20">
       <Content>
-        <h1 class="title">{title}</h1>
+        <h1 class="text-4xl font-head mb-1">{title}</h1>
         <FormattedDate date={pubDate} />
-        {
-          updatedDate && (
-            <div class="last-updated-on">
-              Last updated on <FormattedDate date={updatedDate} />
-            </div>
-          )
-        }
-        <hr />
+        <hr class="mt-4 mb-6 border-neutral-200" />
         <slot />
       </Content>
     </main>
