@@ -12,7 +12,7 @@ const currentPath = new URL(Astro.request.url).pathname
 const { hideRoute = false } = Astro.props;
 ---
 
-<div class="absolute inset-0 w-full h-[300px] overflow-hidden">
+<div class="absolute inset-0 w-full h-[60px] overflow-hidden md:h-[300px]">
   <img
     src="/static/head.jpg"
     alt=""
@@ -22,7 +22,7 @@ const { hideRoute = false } = Astro.props;
 </div>
 <header
   id="head"
-  class="sticky top-[-1px] mt-52 font-head w-full px-5 py-3 z-50"
+  class="sticky top-[-1px] font-head w-full px-5 py-3 z-50 md:mt-52"
 >
   <div class="mx-auto max-w-3xl flex items-center justify-between">
     <div class="flex items-baseline gap-1">

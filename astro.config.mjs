@@ -29,7 +29,6 @@ export default defineConfig({
           h5: 'font-bold mb-3',
           h6: 'font-bold mb-3',
           img: 'rounded-md mb-6',
-          p: 'mb-6',
         },
       ],
     ],

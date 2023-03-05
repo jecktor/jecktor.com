@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Rubik', Verdana, --apple-system, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,6 +30,7 @@ ul.contains-task-list {
 p {
   text-align: justify;
   line-height: 1.5em;
+  margin-bottom: 1.5rem;
 }
 
 p > code {
