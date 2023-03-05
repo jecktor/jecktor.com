@@ -40,7 +40,7 @@ test.. test... test..... test?..... test!....
 
 **This is bold text**
 
-**This is bold text**
+_**This is bold text**_
 
 _This is italic text_
 

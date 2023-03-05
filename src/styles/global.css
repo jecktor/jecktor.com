@@ -5,11 +5,6 @@ body {
   overflow-wrap: break-word;
 }
 
-p {
-  text-align: justify;
-  line-height: 1.5em;
-}
-
 main a {
   text-underline-offset: 2px;
   text-decoration: underline;
@@ -20,17 +15,30 @@ main a:hover {
   color: #d6a1e7;
 }
 
+mark {
+  background: #d6a1e7;
+}
+
+ul.contains-task-list {
+  list-style: none;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+p > code {
+  padding: 0.05rem 0.25rem;
+}
+
 pre {
   padding: 1rem;
   margin-bottom: 1.5rem;
 }
 
-p > code {
-  padding: 0.5rem;
-}
-
 pre,
 p > code {
-  border-radius: 0.75rem;
+  border-radius: 0.375rem;
   background-color: #21252b !important;
 }
