@@ -1,16 +1,28 @@
 ---
-
+import Page from "@layouts/Page.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<Page
+  title="Jecktor's website"
+  description="Formerly known as Jecktor's journal."
+>
+  <h1 class="text-xl font-bold mb-3">Jecktor's website</h1>
+  <p>
+    I'm a software developer who mostly works with web technologies. I like
+    anything audio-related and tinkering with old hardware. Sometimes I upset my
+    ISP by pretending to be a sysadmin.
+  </p>
+  <p>
+    Contact me at <a href="mailto:contact@jecktor.com">contact@jecktor.com</a>.
+  </p>
+  <a href={`/works/test`} class="block mb-6 !no-underline">
+    <fieldset class="border border-base-300 px-4">
+      <legend class="px-2 uppercase bold tracking-widest">
+        Methods of revolution
+      </legend>
+      <p class="!mb-3 px-2 text-base-200">
+        Revolutionary ideas, methodical solutions.
+      </p>
+    </fieldset>
+  </a>
+</Page>

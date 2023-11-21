@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "Switzer";
+  src:
+    url("/fonts/Switzer-Regular.woff2") format("woff2"),
+    url("/fonts/Switzer-Regular.woff") format("woff"),
+    url("/fonts/Switzer-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src:
+    url("/fonts/Switzer-Italic.woff2") format("woff2"),
+    url("/fonts/Switzer-Italic.woff") format("woff"),
+    url("/fonts/Switzer-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src:
+    url("/fonts/Switzer-Semibold.woff2") format("woff2"),
+    url("/fonts/Switzer-Semibold.woff") format("woff"),
+    url("/fonts/Switzer-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src:
+    url("/fonts/Switzer-SemiboldItalic.woff2") format("woff2"),
+    url("/fonts/Switzer-SemiboldItalic.woff") format("woff"),
+    url("/fonts/Switzer-SemiboldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  line-height: 1.8;
+  overflow-wrap: break-word;
+  font-family: "Switzer", sans-serif;
+  color: #444;
+  background: #eee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #d8d8d8;
+    background: #191919;
+  }
+}
+
+main a {
+  text-underline-offset: 2px;
+  text-decoration: underline;
+  text-decoration-color: #ae8e7e;
+}
+
+main a:hover {
+  color: #ae8e7e;
+}
+
+main img {
+  border-radius: 0.375rem;
+}
+
+mark {
+  background: #ae8e7e;
+}
+
+ul.contains-task-list {
+  list-style: none;
+}
+
+p > code {
+  padding: 0.05rem 0.25rem;
+}
+
+pre {
+  padding: 1rem;
+}
+
+blockquote blockquote {
+  margin: 0 !important;
+}
+
+blockquote > p {
+  margin: 0 !important;
+  color: inherit !important;
+}
+
+p,
+blockquote,
+pre {
+  margin-bottom: 1.5rem !important;
+}
+
+pre,
+p > code {
+  border-radius: 0.375rem;
+  background-color: #212121 !important;
+}
+
+.bg {
+  background-image: url("/assets/bg.avif");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
