@@ -121,8 +121,15 @@ p > code {
 }
 
 .bg {
-  background-image: url("/assets/bg.avif");
   background-size: cover;
   background-position: center;
   z-index: -1;
+}
+
+.bg-method {
+  background-image: url("/assets/bg.avif");
+}
+
+.bg-lost {
+  background-image: url("/assets/lost.avif");
 }

@@ -1,0 +1,55 @@
+---
+import "@styles/base.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#191919" />
+    <link
+      rel="preload"
+      href="/fonts/Switzer-Regular.woff2"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Switzer-Italic.woff2"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Switzer-Semibold.woff2"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Switzer-SemiboldItalic.woff2"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <title>Not found</title>
+    <meta
+      name="description"
+      content="There was a website here once. It's gone now."
+    />
+  </head>
+  <body class="h-screen bg-white bg bg-lost">
+    <main
+      class="absolute left-4 bottom-36 text-base-600 md:left-24 md:bottom-64"
+    >
+      <h1 class="text-xl">There was a website here once.</h1>
+      <p>It's gone now.</p>
+      <a href="/">Back to index.</a>
+    </main>
+  </body>
+</html>
