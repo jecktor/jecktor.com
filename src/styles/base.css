@@ -42,19 +42,12 @@ body {
   line-height: 1.8;
   overflow-wrap: break-word;
   font-family: "Proxima Nova", sans-serif;
-  color: #444;
-  background: #eee;
+  color: #d8d8d8;
+  background: #171717;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color: #d8d8d8;
-    background: #191919;
-  }
 }
 
 main a {
@@ -111,6 +104,9 @@ p > code {
 .bg {
   background-size: cover;
   background-position: center;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
   z-index: -1;
 }
 
