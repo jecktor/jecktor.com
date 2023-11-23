@@ -5,9 +5,10 @@ import "@styles/base.css";
 interface Props {
   title: string;
   description: string;
+  preloads?: string[];
 }
 
-const { title, description } = Astro.props;
+const { title, description, preloads = ["Regular"] } = Astro.props;
 ---
 
 <html lang="en">
@@ -18,19 +19,23 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#191919" />
     <link rel="preload" as="image" href="/assets/bg.avif" />
-    <link
-      rel="preload"
-      href="/fonts/Switzer-Regular.woff2"
-      as="font"
-      type="font/woff"
-      crossorigin
-    />
+    {
+      preloads.map((font) => (
+        <link
+          rel="preload"
+          href={`/fonts/Proxima-Nova-${font}.woff2`}
+          as="font"
+          type="font/woff"
+          crossorigin
+        />
+      ))
+    }
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
   <body class="h-screen bg-base-800 bg bg-method">
     <div
-      class="flex flex-col h-full pt-10 px-4 bg-base-800/80 backdrop-blur-xl overflow-scroll md:px-0"
+      class="flex flex-col h-full pt-10 px-4 bg-base-800/80 backdrop-blur-xl overflow-x-hidden overflow-y-scroll no-scrollbar md:px-0"
     >
       <main class="flex-1 max-w-2xl mx-auto">
         <slot />
