@@ -1,0 +1,14 @@
+{
+  "works": [
+    {
+      "name": "Kolabr",
+      "desc": "Kanban board application with live collaboration capabilities.",
+      "link": "https://github.com/jecktor/kolabr"
+    },
+    {
+      "name": "Audiophile",
+      "desc": "E-commerce website for a fictional audio equipment store.",
+      "link": "https://github.com/jecktor/audiophile-ecommerce"
+    }
+  ]
+}
