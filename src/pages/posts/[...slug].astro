@@ -23,9 +23,9 @@ const { Content } = await post.render();
   description={post.data.desc}
   preloads={["Regular", "Italic", "Semibold", "SemiboldItalic"]}
 >
-  <a href="/posts" class="block mb-3">&#8592; Posts</a>
-  <div>
-    <div class="mb-3">
+  <div class="relative">
+    <div class="static text-left mb-3 xl:w-[14rem] xl:absolute xl:-left-72 xl:text-right">
+      <a href="/posts" class="block mb-3">&#8592; Posts</a>
       <h1 class="text-xl font-bold">{post.data.title}</h1>
       <FormattedDate date={post.data.pubDate} />
     </div>

@@ -13,22 +13,26 @@ const posts = (await getCollection("posts")).sort(
   title="Jecktor's website"
   description="Formerly known as Jecktor's journal."
 >
-  <a href="/" class="block mb-3">&#8592; Index</a>
-  <ul class="flex flex-col gap-4">
-    {
-      posts.map((post) => (
-        <li class="flex flex-wrap justify-between items-center md:flex-nowrap md:whitespace-nowrap">
-          <a
-            href={`/posts/${post.slug}`}
-            class="mr-4 overflow-hidden text-ellipsis"
-          >
-            {post.data.title}
-          </a>
-          <span>
-            <FormattedDate date={post.data.pubDate} />
-          </span>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="relative">
+    <div class="static text-left mb-3 xl:w-[14rem] xl:absolute xl:-left-72 xl:text-right">
+      <a href="/" class="block mb-3">&#8592; Index</a>
+    </div>
+    <ul class="flex flex-col gap-4">
+      {
+        posts.map((post) => (
+          <li class="flex flex-wrap justify-between items-center md:flex-nowrap md:whitespace-nowrap">
+            <a
+              href={`/posts/${post.slug}`}
+              class="mr-4 overflow-hidden text-ellipsis"
+            >
+              {post.data.title}
+            </a>
+            <span>
+              <FormattedDate date={post.data.pubDate} />
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </Page>
