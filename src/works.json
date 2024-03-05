@@ -2,7 +2,7 @@
   "works": [
     {
       "name": "Kolabr",
-      "desc": "Kanban board application with live collaboration capabilities.",
+      "desc": "Real-time collaborative kanban board web application.",
       "link": "https://github.com/jecktor/kolabr"
     },
     {
