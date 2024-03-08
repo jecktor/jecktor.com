@@ -8,14 +8,6 @@
 
 @font-face {
   font-family: "Proxima-Nova";
-  src: url("/fonts/Proxima-Nova-Italic.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Proxima-Nova";
   src: url("/fonts/Proxima-Nova-Semibold.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
@@ -23,9 +15,17 @@
 }
 
 @font-face {
-  font-family: "Proxima-Nova";
-  src: url("/fonts/Proxima-Nova-SemiboldItalic.woff2") format("woff2");
-  font-weight: 600;
+  font-family: "Garamond-Premier-Pro";
+  src: url("/fonts/Garamond-Premier-Pro-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Garamond-Premier-Pro";
+  src: url("/fonts/Garamond-Premier-Pro-Bold-Italic.woff2") format("woff2");
+  font-weight: 700;
   font-display: swap;
   font-style: italic;
 }
@@ -48,6 +48,18 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+em,
+i {
+  font-style: italic;
+  font-family: "Garamond Premier Pro", serif;
+  -webkit-font-smoothing: auto;
+}
+
+strong em,
+i.bold {
+  font-weight: 700;
 }
 
 main a {

@@ -5,10 +5,9 @@ import "@styles/base.css";
 interface Props {
   title: string;
   description: string;
-  preloads?: string[];
 }
 
-const { title, description, preloads = ["Regular"] } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
@@ -19,17 +18,34 @@ const { title, description, preloads = ["Regular"] } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#171717" />
     <link rel="preload" as="image" href="/assets/bg.avif" />
-    {
-      preloads.map((font) => (
-        <link
-          rel="preload"
-          href={`/fonts/Proxima-Nova-${font}.woff2`}
-          as="font"
-          type="font/woff"
-          crossorigin
-        />
-      ))
-    }
+    <link
+      rel="preload"
+      href="/fonts/Proxima-Nova-Regular.woff2"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Proxima-Nova-Semibold.woff2"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Garamond-Premier-Pro-Italic.woff2"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Garamond-Premier-Pro-Bold-Italic.woff2"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
