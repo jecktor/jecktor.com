@@ -51,7 +51,8 @@ html {
 }
 
 em,
-i {
+i,
+.italic {
   font-style: italic;
   font-family: "Garamond Premier Pro", serif;
   -webkit-font-smoothing: auto;

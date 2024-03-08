@@ -13,7 +13,6 @@ const posts = (await getCollection("posts"))
 <Page
   title="Jecktor's website"
   description="Formerly known as Jecktor's journal."
-  preloads={["Regular", "Semibold"]}
 >
   <section>
     <h1 class="mb-3 text-xl font-bold">Jecktor's website</h1>
@@ -68,6 +67,8 @@ const posts = (await getCollection("posts"))
         ))
       }
     </ul>
-    <a href="/posts" class="block w-fit mt-4"> All posts &#8594;</a>
+    <a href="/posts" class="block w-fit mt-4">
+      <span class="italic">All posts</span> &#8594;
+    </a>
   </section>
 </Page>

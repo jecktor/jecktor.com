@@ -14,8 +14,12 @@ const posts = (await getCollection("posts")).sort(
   description="Formerly known as Jecktor's journal."
 >
   <div class="relative">
-    <div class="static text-left mb-3 xl:w-[14rem] xl:absolute xl:-left-72 xl:text-right">
-      <a href="/" class="block mb-3">&#8592; Index</a>
+    <div
+      class="static text-left mb-3 xl:w-[14rem] xl:absolute xl:-left-72 xl:text-right"
+    >
+      <a href="/" class="block mb-3">
+        &#8592; <span class="italic">Index</span>
+      </a>
     </div>
     <ul class="flex flex-col gap-4">
       {

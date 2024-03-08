@@ -61,7 +61,16 @@ const { title, description } = Astro.props;
       >
         <div class="flex justify-between items-center max-w-2xl mx-auto">
           <small>{toRoman(new Date().getFullYear())}</small>
-          <div>
+          <div class="flex items-center gap-5">
+            <a href="/website" aria-label="Website">
+              <img
+                src="/assets/web.svg"
+                width="15"
+                height="15"
+                alt=""
+                aria-hidden="true"
+              />
+            </a>
             <a
               href="https://github.com/jecktor"
               target="_blank"

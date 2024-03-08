@@ -17,6 +17,13 @@ import "@styles/base.css";
       type="font/woff"
       crossorigin
     />
+    <link
+      rel="preload"
+      href="/fonts/Garamond-Premier-Pro-Italic.woff2"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
     <title>Not found</title>
     <meta
       name="description"
@@ -27,12 +34,12 @@ import "@styles/base.css";
     <main
       class="absolute left-4 bottom-24 bg-base-800 md:left-24 md:bottom-1/4"
     >
-      <h1 class="text-xl">There was a website here once.</h1>
-      <p>It's gone now.</p>
-      <a href="/">&#8592; Index</a>
+      <h1 class="text-xl xl:text-2xl">There was a website here once.</h1>
+      <p class="italic xl:text-lg">It's gone now.</p>
+      <a href="/">&#8592; <span class="italic">Index</span></a>
     </main>
     <img
-      src="/splunchbob.png"
+      src="/assets/splunchbob.png"
       class="absolute bottom-20 left-1/2 -translate-x-1/2"
       alt=""
       aria-hidden="true"
