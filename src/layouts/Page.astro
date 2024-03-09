@@ -49,45 +49,53 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
-  <body class="h-screen bg-base-800 bg bg-method">
+  <body class="h-screen bg-base-800 bg bg-method lg:p-6">
     <div
-      class="flex flex-col h-full pt-10 px-4 bg-base-800/80 backdrop-blur-xl overflow-x-hidden overflow-y-scroll no-scrollbar md:px-0"
+      class="h-full border-solid border-base-800 lg:border lg:rounded-[0.82rem]"
     >
-      <main class="flex-1 w-full max-w-2xl mx-auto md:w-[42rem]">
-        <slot />
-      </main>
-      <footer
-        class="mt-10 py-2 border-t border-base-500 text-base-200 md:w-screen"
+      <div
+        class="h-full border-solid border-base-400 overflow-hidden lg:border lg:rounded-xl"
       >
-        <div class="flex justify-between items-center max-w-2xl mx-auto">
-          <small>{toRoman(new Date().getFullYear())}</small>
-          <div class="flex items-center gap-5">
-            <a href="/website" aria-label="Website">
-              <img
-                src="/assets/web.svg"
-                width="15"
-                height="15"
-                alt=""
-                aria-hidden="true"
-              />
-            </a>
-            <a
-              href="https://github.com/jecktor"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <img
-                src="/assets/github.svg"
-                width="17"
-                height="14"
-                alt=""
-                aria-hidden="true"
-              />
-            </a>
-          </div>
+        <div
+          class="flex flex-col h-full pt-10 px-4 bg-base-800/80 backdrop-blur-xl overflow-x-hidden overflow-y-scroll no-scrollbar md:px-0"
+        >
+          <main class="flex-1 w-full max-w-2xl mx-auto md:w-[42rem]">
+            <slot />
+          </main>
+          <footer
+            class="mt-10 py-2 border-t border-base-500 text-base-200 md:w-screen"
+          >
+            <div class="flex justify-between items-center max-w-2xl mx-auto">
+              <small>{toRoman(new Date().getFullYear())}</small>
+              <div class="flex items-center gap-5">
+                <a href="/website" aria-label="Website">
+                  <img
+                    src="/assets/web.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="https://github.com/jecktor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                >
+                  <img
+                    src="/assets/github.svg"
+                    width="17"
+                    height="14"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+            </div>
+          </footer>
         </div>
-      </footer>
+      </div>
     </div>
   </body>
 </html>

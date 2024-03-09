@@ -18,10 +18,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Page
-  title={post.data.title}
-  description={post.data.desc}
->
+<Page title={post.data.title} description={post.data.desc}>
   <div class="relative">
     <div
       class="static text-left mb-3 xl:w-[14rem] xl:absolute xl:-left-72 xl:text-right"
