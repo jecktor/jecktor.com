@@ -7,7 +7,7 @@ import FormattedDate from "@components/FormattedDate.astro";
 
 const posts = (await getCollection("posts"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+  .slice(0, 5);
 ---
 
 <Page
@@ -46,7 +46,12 @@ const posts = (await getCollection("posts"))
     </p>
   </section>
   <section>
-    <h2 class="mb-3 text-xl font-bold">Works</h2>
+    <div class="flex items-baseline gap-2 mb-3">
+      <h2 class="text-xl font-bold">Works</h2>
+      <a class="text-sm text-base-200" href="/works">
+        <span class="italic">See all</span> &#8594;
+      </a>
+    </div>
     <div class="md:grid grid-cols-2 gap-x-8 mb-3">
       {
         works.map((project) => (
@@ -68,7 +73,12 @@ const posts = (await getCollection("posts"))
     </div>
   </section>
   <section>
-    <h2 class="mb-3 text-xl font-bold">Posts</h2>
+    <div class="flex items-baseline gap-2 mb-3">
+      <h2 class="text-xl font-bold">Posts</h2>
+      <a class="text-sm text-base-200" href="/posts">
+        <span class="italic">See all</span> &#8594;
+      </a>
+    </div>
     <ul class="flex flex-col gap-4">
       {
         posts.map((post) => (
@@ -86,8 +96,5 @@ const posts = (await getCollection("posts"))
         ))
       }
     </ul>
-    <a href="/posts" class="block w-fit mt-4">
-      <span class="italic">All posts</span> &#8594;
-    </a>
   </section>
 </Page>
