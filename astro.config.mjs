@@ -1,13 +1,14 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import addClasses from "rehype-add-classes";
+import vesbones from "./vesbones.json";
 
 export default defineConfig({
   site: "https://jecktor.com",
   integrations: [tailwind()],
   markdown: {
     shikiConfig: {
-      theme: "vitesse-dark",
+      theme: vesbones,
     },
     rehypePlugins: [
       [
