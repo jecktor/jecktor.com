@@ -15,7 +15,26 @@ const posts = (await getCollection("posts"))
   description="Formerly known as Jecktor's journal."
 >
   <section>
-    <h1 class="mb-3 text-xl font-bold">Jecktor's website</h1>
+    <div
+      class="flex flex-wrap justify-center items-center gap-6 mb-6 md:justify-start"
+    >
+      <div
+        class="w-16 h-16 border-2 border-base-100 rounded-full overflow-hidden"
+      >
+        <img
+          class="w-full h-full object-cover"
+          src="/assets/jk.avif"
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
+      <div>
+        <h2 class="text-xl font-bold">Héctor Loyo</h2>
+        <p class="!mb-0 text-base-200">
+          Software Developer / Digital Craftsman
+        </p>
+      </div>
+    </div>
     <p>
       I'm a software developer who mostly works with web technologies. I like
       fountain pens, tinkering with old hardware and anything audio-related.
