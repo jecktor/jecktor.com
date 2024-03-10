@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+
+import FormattedDate from "./FormattedDate.astro";
+
+interface Props {
+  limit?: number;
+}
+
+const { limit = 5 } = Astro.props;
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<ul class="flex flex-col">
+  {
+    (limit ? posts.slice(0, limit) : posts).map((post, idx) => (
+      <li class=`flex flex-wrap justify-between items-center pl-4 border-l border-base-300 md:flex-nowrap md:whitespace-nowrap ${idx === 0 ? 'pb-2' : idx === posts.length ? 'pt-2' : 'py-2'}`>
+        <a
+          href={`/posts/${post.slug}`}
+          class="mr-4 overflow-hidden text-ellipsis"
+        >
+          {post.data.title}
+        </a>
+        <span>
+          <FormattedDate date={post.data.pubDate} />
+        </span>
+      </li>
+    ))
+  }
+</ul>

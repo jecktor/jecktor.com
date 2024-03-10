@@ -1,0 +1,85 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+
+import { ExternalLink, GitPullRequestArrow } from 'lucide-astro';
+
+import Page from "@layouts/Page.astro";
+import Badge from "@components/Badge.astro";
+
+export async function getStaticPaths() {
+  const works = await getCollection("works");
+  return works.map((project) => ({
+    params: { slug: project.slug },
+    props: project,
+  }));
+}
+
+type Props = CollectionEntry<"works">;
+
+const project = Astro.props;
+const { Content } = await project.render();
+---
+
+<Page title={project.data.title} description={project.data.desc}>
+  <div class="relative">
+    <div
+      class="static text-left mb-3 xl:w-[14rem] xl:absolute xl:-left-72 xl:text-right"
+    >
+      <a href="/works" class="block mb-3">
+        &#8592; <span class="italic">Works</span>
+      </a>
+      <h1 class="text-xl font-bold">{project.data.title}</h1>
+      <span class="text-base-200">{project.data.pubDate.getFullYear()}</span>
+    </div>
+    <div>
+      <div class="flex flex-wrap items-center gap-4 mb-[22px]">
+        <a
+          href={project.data.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Website"
+        >
+          <ExternalLink class="h-5 w-5" />
+        </a>
+        <a
+          href={project.data.repo}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Repository"
+        >
+          <GitPullRequestArrow class="h-5 w-5" />
+        </a>
+        <div class="flex flex-wrap items-center gap-2">
+          {project.data.stack.map((tech) => (
+            <Badge>{tech}</Badge>
+          ))}
+        </div>
+      </div>
+      <Content />
+      <div class="w-full h-[184px] mb-4 rounded-md overflow-hidden">
+        <div
+          style={`background-image: url(/works/${project.slug}/${project.data.hero});`}
+          class="w-full h-full bg-cover bg-center"
+        />
+      </div>
+      <div
+        class="mb-6 w-full grid grid-cols-5 grid-rows-2 gap-4 grid-template-gallery h-96"
+      >
+        {
+          project.data.gallery.map((image, i) => (
+            <div class="rounded-md overflow-hidden" style={`grid-area: i${i + 1};`}>
+              <div
+                style={`background-image: url(/works/${project.slug}/${image});`}
+                class="w-full h-full bg-cover bg-center"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <div
+    class="hidden px-6 py-1 border-l-4 text-primary-100 border-primary-400 bg-primary-700 italic [&:nth-child(even)]:bg-base-600 p-2 border border-base-500 list-decimal ml-[1.1rem] mb-6 list-disc w-full text-left [&>tr]:bg-base-600 text-4xl font-bold mb-3 text-2xl text-xl text-lg rounded-md"
+  >
+  </div>
+</Page>

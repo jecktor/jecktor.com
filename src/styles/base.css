@@ -140,3 +140,9 @@ p > code {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.grid-template-gallery {
+  grid-template-areas:
+    "i1 i1 i3 i3 i3"
+    "i2 i2 i3 i3 i3";
+}

@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+  limit?: number;
+}
+
+const { limit = 5 } = Astro.props;
+
+const works = (await getCollection("works")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<div class="md:grid grid-cols-2 gap-x-8 mb-3">
+  {
+    (limit ? works.slice(0, limit) : works).map((project) => (
+      <a
+        href={`/works/${project.slug}`}
+        class="block mb-6 !no-underline last:odd:col-span-2"
+      >
+        <fieldset class="h-full border border-base-300 px-4">
+          <legend class="px-2 uppercase bold tracking-widest">
+            {project.data.title}
+          </legend>
+          <p class="!mb-3 px-2 text-base-200">{project.data.desc}</p>
+        </fieldset>
+      </a>
+    ))
+  }
+</div>

@@ -2,6 +2,8 @@
 import { toRoman } from "@utils/toRoman";
 import "@styles/base.css";
 
+import { Github, Globe } from "lucide-astro";
+
 interface Props {
   title: string;
   description: string;
@@ -66,30 +68,25 @@ const { title, description } = Astro.props;
             class="mt-10 py-2 border-t border-base-500 text-base-200 md:w-screen"
           >
             <div class="flex justify-between items-center max-w-2xl mx-auto">
-              <small>{toRoman(new Date().getFullYear())}</small>
+              <small class="tracking-wider font-serif">
+                {toRoman(new Date().getFullYear())}
+              </small>
               <div class="flex items-center gap-5">
-                <a href="/website" aria-label="Website">
-                  <img
-                    src="/assets/web.svg"
-                    width="15"
-                    height="15"
-                    alt=""
-                    aria-hidden="true"
-                  />
+                <a
+                  class="hover:text-primary-400"
+                  href="/website"
+                  aria-label="Website"
+                >
+                  <Globe class="w-4 h-4" />
                 </a>
                 <a
+                  class="hover:text-primary-400"
                   href="https://github.com/jecktor"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                 >
-                  <img
-                    src="/assets/github.svg"
-                    width="17"
-                    height="14"
-                    alt=""
-                    aria-hidden="true"
-                  />
+                  <Github class="w-4 h-4" />
                 </a>
               </div>
             </div>

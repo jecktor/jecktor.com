@@ -1,13 +1,8 @@
 ---
-import { getCollection } from "astro:content";
-import { works } from "src/works.json";
-
 import Page from "@layouts/Page.astro";
-import FormattedDate from "@components/FormattedDate.astro";
 
-const posts = (await getCollection("posts"))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 5);
+import Works from "@components/Works.astro";
+import Posts from "@components/Posts.astro";
 ---
 
 <Page
@@ -52,25 +47,7 @@ const posts = (await getCollection("posts"))
         <span class="italic">See all</span> &#8594;
       </a>
     </div>
-    <div class="md:grid grid-cols-2 gap-x-8 mb-3">
-      {
-        works.map((project) => (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block mb-6 !no-underline last:odd:col-span-2"
-          >
-            <fieldset class="h-full border border-base-300 px-4">
-              <legend class="px-2 uppercase bold tracking-widest">
-                {project.name}
-              </legend>
-              <p class="!mb-3 px-2 text-base-200">{project.desc}</p>
-            </fieldset>
-          </a>
-        ))
-      }
-    </div>
+    <Works limit={4} />
   </section>
   <section>
     <div class="flex items-baseline gap-2 mb-3">
@@ -79,22 +56,6 @@ const posts = (await getCollection("posts"))
         <span class="italic">See all</span> &#8594;
       </a>
     </div>
-    <ul class="flex flex-col gap-4">
-      {
-        posts.map((post) => (
-          <li class="flex flex-wrap justify-between items-center md:flex-nowrap md:whitespace-nowrap">
-            <a
-              href={`/posts/${post.slug}`}
-              class="mr-4 overflow-hidden text-ellipsis"
-            >
-              {post.data.title}
-            </a>
-            <span>
-              <FormattedDate date={post.data.pubDate} />
-            </span>
-          </li>
-        ))
-      }
-    </ul>
+    <Posts limit={5} />
   </section>
 </Page>
